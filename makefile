@@ -24,3 +24,15 @@ clean:
 
 valgrind: heap_student
 	valgrind --leak-check=full ./heap_student
+
+blackbelt: blackbelt.o address.o date.o student.o
+	g++ -g blackbelt.o address.o date.o student.o -o blackbelt
+
+blackbelt.o: blackbelt.cpp student.h
+	g++ -g -c blackbelt.cpp
+
+runbb: blackbelt
+	./blackbelt
+
+valgrindbb: blackbelt
+	valgrind --leak-check=full ./blackbelt

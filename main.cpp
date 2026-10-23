@@ -16,7 +16,9 @@ int main(){
 	loadStudents(students);
 	
 	std::string choice ="";
-	while (choice != "0"){
+	
+	bool keepGoing = true;
+	while (keepGoing){
 		choice = menu();
 		if (choice == "1") {
 			showStudentNames(students);
@@ -26,6 +28,7 @@ int main(){
 			findStudents(students);
 		} else if (choice == "0") {
 			std::cout << "bye" << std::endl;
+			keepGoing = false;
 		} else {
 			std::cout << "not a valid choice" << std::endl;
 		} // end if

@@ -196,17 +196,61 @@ int main()
     make a vector of Student pointers called students
     call loadStudents with students
     make a string called choice and set it to ""
-    while choice is not "0"
+    make a bool called keepGoing and set it to true
+    while keepGoing is true:
         choice = menu()
-        if choice is "1" call showStudentNames
-        else if choice is "2" call printStudents
-        else if choice is "3" call findStudents
-        else if choice is "0" print "bye"
+        if choice is "1": 
+            go to showStudentNames function and pass ref to students
+        else if choice is "2":
+            go to printStudents function and pass ref to students
+        else if choice is "3":
+            go to findStudents function and pass ref to students
+        else if choice is "0":
+            print "bye"
+            set keepGoing to false
         else print "not a valid choice"
     call delStudents with students
     return 0
 ```
 
+## Blackbelt
 
+### sorting byLastName
+```
+bool byLastName(Student* a, Student* b)
+    return true if a's last name is less than b's last name
+```
 
+### sorting byFirstName
+```
+bool byFirstName(Student* a, Student* b)
+    return true if a's first name is less than b's first name
+```
 
+### sorting byCredits
+```
+bool byCredits(Student* a, Student* b)
+    return true if a's credit hours are greater than b's credit hours
+    if it greater than so the most credits come first
+```
+
+### main (blackbelt version)
+```
+    same as main with 3 more choices in the while loop
+    if choice is "4":
+        sort students from begin to end using byLastName
+    if choice is "5": 
+        sort student from begin to end using byFirstName
+    if choice is "6": 
+        sort students from begin to end using byCredits
+```
+
+### menu
+```
+    same as menu with options 4, 5, 6 added and the prompt
+    changed to "please choose 0-6"
+```
+### to run the blackbelt version
+```
+make runbb or vim into makefile to see it
+```
